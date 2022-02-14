@@ -1,0 +1,55 @@
+{% extends "base/main.html" %}
+{% block content %}
+
+<style>
+    .project-container {
+        /* max-width: 900px; */
+        margin: 0 auto;
+        padding: 3.5em;
+        margin-bottom: 2em;
+    }
+</style>
+
+
+<div class="container">
+    <div class="project-container">
+        <img class="project-image" src="{{Project.thumbnail.url}}" alt="">
+        <h1>{{Project.title}}</h1>
+        <hr>
+        <p>{{Project.body|safe}}</p>
+
+        <div class="comments-container">
+            <h3>Comments {{Count}} </h3>
+            <hr>
+
+            <form method="POST"> {% csrf_token %}
+
+                {% for field in Forms %}
+                <div class="mb-3">
+                    <label class="form-label" for="">{{field.label}}</label>
+                    {{field}}
+                </div>
+                {% endfor %}
+                <input class="btn btn-primary" type="submit" value="submit">
+
+            </form>
+
+            <hr>
+            {% for comment in Comments %}
+            <div class="card my-2">
+                <div class="card-body ">
+                    <h5>{{comment.name}}</h5>
+                    <p>{{comment.body}}</p>
+                    <small>{{comment.created | timesince}} ago</small>
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+        {% if request.user.is_authenticated %}
+        <a class="btn btn-warning" href="{% url 'edit-project' Project.id %}">Edit</a>
+        {% endif %}
+    </div>
+</div>
+
+{% endblock content %}
