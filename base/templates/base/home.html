@@ -30,7 +30,6 @@
 
         {% for project in Projects %}
         <div class="project-column">
-            <!-- url - go to the projects page and then we pass in the project id dynamically -->
             <a href="{% url 'projects' project.id %}">
                 <img class="project-thumbnail" src="{{ project.thumbnail.url }}" alt="img">
             </a>
