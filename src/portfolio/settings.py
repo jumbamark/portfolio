@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 import os
 from decouple import config
+import django_on_heroku
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -148,3 +149,6 @@ CKEDITOR_UPLOAD_PATH = 'uploads/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Automatically configure's DATABASE_URL, ALLOWED_HOSTS, WhiteNoise(for static assets), Logging and Heroku CI
+django_on_heroku.settings(locals())
