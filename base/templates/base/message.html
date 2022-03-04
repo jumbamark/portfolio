@@ -1,0 +1,15 @@
+<!-- contact form -->
+{% extends "base/main.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<div style="padding:3.5em" class="container">
+    <p>Sender: {{Inbox.name}}</p>
+    <p>Email: {{Inbox.email}}</p>
+    <hr>
+    <p>{{Inbox.body}}</p>
+</div>
+
+{% endblock content %}
