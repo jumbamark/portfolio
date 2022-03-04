@@ -7,4 +7,4 @@
 * Bootstrap
 <br/>
 
-[Visit site](https://jumbamark-portfolio.herokuapp.com/)
+[Webiste](https://jumbamark-portfolio.herokuapp.com/)
