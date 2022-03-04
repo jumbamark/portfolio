@@ -29,6 +29,7 @@
     <div class="project-wrapper">
 
         {% for project in Projects %}
+        <!-- url - go to the projects page and then we pass in the project id dynamically -->
         <div class="project-column">
             <a href="{% url 'projects' project.id %}">
                 <img class="project-thumbnail" src="{{ project.thumbnail.url }}" alt="img">
