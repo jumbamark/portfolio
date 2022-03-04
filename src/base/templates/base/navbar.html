@@ -3,6 +3,9 @@
     <a class="nav-link scroll-to" data-link="projects">Projects</a>
     <a class="nav-link scroll-to" data-link="contact">Contact</a>
     <a class="nav-link " href="{% url 'chart' %}">Vote</a>
+    <a class="nav-link btn btn-dark" href="{% url 'donation' %}">
+        Buy Me a Coffee
+    </a>
 
     {% if request.user.is_authenticated %}
     <a class="nav-link" href="{% url 'add-project' %}">
@@ -15,10 +18,6 @@
 
     <a class="nav-link" href="{% url 'add-skill' %}">
         Add Skill
-    </a>
-
-    <a class="nav-link btn btn-dark" href="{% url 'donation' %}">
-        Buy Me a Coffee
     </a>
 
     {% endif %}
