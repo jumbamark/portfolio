@@ -6,5 +6,5 @@
 * djangorestframework
 * Bootstrap
 <br/>
-<br/>
-[visit site](https://jumbamark-portfolio.herokuapp.com/)
+
+[Visit site](https://jumbamark-portfolio.herokuapp.com/)
