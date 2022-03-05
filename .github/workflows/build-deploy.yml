@@ -20,3 +20,7 @@ jobs:
         run: pip3 install pipenv
       - name: Install all dependencies
         run: pipenv install --dev
+      - name: Activating the virtualenv
+        run: pipenv shell
+      - name: Listing requirements
+        run: pip freeze 
