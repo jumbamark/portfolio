@@ -19,4 +19,4 @@ jobs:
       - name: Install pipenv
         run: pip3 install pipenv
       - name: Install all dependencies
-        run: pipenv install 
+        run: pipenv lock
