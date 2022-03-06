@@ -1,7 +1,9 @@
 <section class="navigation-bar">
     <a class="nav-link " href="{% url 'home' %}">Home</a>
-    <a class="nav-link scroll-to" data-link="projects">Projects</a>
-    <a class="nav-link scroll-to" data-link="contact">Contact</a>
+    <!-- <a class="nav-link scroll-to" data-link="projects">Projects</a> -->
+    <!-- <a class="nav-link scroll-to" data-link="contact">Contact</a> -->
+    <a class="nav-link " href="{% url 'home' %}#projects">Projects</a>
+    <a class="nav-link " href="{% url 'home' %}#contact">Contact</a>
     <a class="nav-link " href="{% url 'chart' %}">Vote</a>
 
     {% if request.user.is_authenticated %}
