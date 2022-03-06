@@ -19,7 +19,7 @@ from django.conf import settings  # referecing the media root file in settings.p
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('jumbamark/', admin.site.urls),
     path('', include('base.urls')),
     path('api/', include('base.api.urls')),
     path('ckeditor/', include('ckeditor_uploader.urls')),
