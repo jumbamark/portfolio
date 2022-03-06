@@ -17,18 +17,21 @@ jobs:
         with:
           python-version: '3.8' 
 
-      - name: Update pip
-        run: python -m pip install --upgrade pip
-
       - name: Install pipenv
         run: |
           python -m pip install --upgrade pipenv wheel
+      
+      - id: cache-pipenv
+        uses: actions/cache@v2
+        with: 
+          path: ~/.local/share/virtualenvs
+          key: ${{ runner.os }}-${{ hashFiles('**/lockfiles') }}
+      
 
       - name: Install all dependencies
+        if: steps.cache-pipenv.outputs.cache-hit != 'true'
         run: | 
           pipenv install --deploy --dev
 
       - name: Listing requirements
         run: pip freeze 
-  
- 
