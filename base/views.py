@@ -165,3 +165,8 @@ def chartPage(request):
             messages.success(request, "Thanks for voting")
             return redirect("chart")
     return render(request, "base/chart.html", {"Form": Form})
+
+
+def error_404(request, exception):
+    return render(request, "base/404.html")
+

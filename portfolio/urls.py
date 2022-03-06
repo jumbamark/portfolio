@@ -30,3 +30,5 @@ urlpatterns = [
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 # configure our static files in production - when we are deploying it django is not meant to save staticfiles so we're gonna have to customize
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+handler404 = "base.views.error_404"
